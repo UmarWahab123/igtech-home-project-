@@ -1,0 +1,811 @@
+.test-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #8a6868;
+    text-transform: uppercase
+}
+
+.optheading {
+    font-family: montserrat, Helvetica, Arial, Lucida, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #c6bfb5;
+    letter-spacing: .05em
+}
+
+.question {
+    font-family: montserrat, Helvetica, Arial, Lucida, sans-serif;
+    font-weight: 600;
+    letter-spacing: .01em;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 50px
+}
+
+.samebox {
+    position: fixed;
+    left: 27%;
+    top: 30%;
+    z-index: 9999
+}
+
+.blur {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999
+}
+
+.not {
+    margin-left: -22px
+}
+
+.notrue {
+    margin-left: -21px
+}
+
+.rarely {
+    margin-left: -12px
+}
+
+.rarelytrue {
+    margin-left: -14px
+}
+
+.often {
+    margin-left: -13px
+}
+
+.oftentrue {
+    margin-left: -4px
+}
+
+.very {
+    margin-left: -17px
+}
+
+.verytrue {
+    margin-left: -3px
+}
+
+.animation-svg {
+    position: absolute !important;
+    top: -24px !important;
+    left: -9px !important
+}
+
+.answer-row {
+    margin-top: 5%
+}
+
+.progress-bar {
+    background: #000
+}
+
+.btnclose {
+    font-size: 25px;
+    color: #25221c66;
+    cursor: pointer
+}
+
+.stage12 {
+    margin-top: 6%
+}
+
+.questionb {
+    font-weight: 600;
+    font-family: montserrat, Helvetica, Arial, Lucida, sans-serif;
+    letter-spacing: .01em
+}
+
+.s3radio {
+    margin-top: 30px
+}
+
+.resulth1 {
+    color: #171312;
+    margin-top: 40px;
+    font-weight: 700
+}
+
+.resulth2 {
+    color: #6c7088;
+    margin-top: 20px
+}
+
+.alert-container {
+    padding: :50px !important
+}
+
+.alert-title {
+    font-size: 27px !important
+}
+
+.alert-content {
+    font-size: 22px !important
+}
+
+.alert-button {
+    font-size: 25px !important
+}
+
+.faux-radio {
+    border-radius: 50%;
+    background: 0 0;
+    border: 3px solid #ccc;
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    border-color: #c6bfb5 !important;
+    color: #c6bfb5 !important;
+    margin: 0 auto;
+    line-height: 2rem;
+    padding: 0 !important
+}
+
+.lrg {
+    height: 45px;
+    width: 45px
+}
+
+.med {
+    height: 40px;
+    width: 40px
+}
+
+.progress-text {
+    margin-bottom: -34px
+}
+
+.progress {
+    border-radius: 0
+}
+
+.samebox h2 {
+    font-size: 34px;
+    font-weight: 800 !important;
+    letter-spacing: .01em;
+    font-family: montserrat, Helvetica, Arial, Lucida, sans-serif !important
+}
+.loaderdiv {
+    left: 40%;
+    top: 25%;
+    position: absolute;
+}
+.loaderdiv img{height: 200px;}
+.samebox h2,
+div,
+a {
+    font-family: montserrat, Helvetica, Arial, Lucida, sans-serif
+}
+
+.samebox .text {
+    font-size: 18px
+}
+
+.msgtext {
+    max-width: 500px
+}
+
+.btnblue {
+    color: #fff !important;
+    border: 2px solid #3d4058;
+    border-radius: 100px;
+    letter-spacing: .1em;
+    font-size: 16px;
+    font-family: montserrat, Helvetica, Arial, Lucida, sans-serif !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    background-color: #3d4058;
+    padding-top: 14px !important;
+    padding-right: 38px !important;
+    padding-bottom: 14px !important;
+    padding-left: 38px !important;
+    text-decoration: none !important
+}
+
+.btnblue:hover {
+    background-color: rgba(35, 42, 83, .25)
+}
+
+.btnleave {
+    color: #3d4058 !important;
+    border: 2px solid #3d4058;
+    border-radius: 100px !important;
+    letter-spacing: .1em;
+    font-size: 16px;
+    font-family: montserrat, Helvetica, Arial, Lucida, sans-serif !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    background-color: #fff !important;
+    padding-top: 14px !important;
+    padding-right: 38px !important;
+    padding-bottom: 14px !important;
+    padding-left: 38px !important;
+    text-decoration: none !important
+}
+
+.btnleave:hover {
+    background-color: rgba(35, 42, 83, .15) !important
+}
+
+.myreadonly {
+    pointer-events: none
+}
+
+.leavediv {
+    margin-top: 40px
+}
+
+body.m-content--skin-light2 {
+    background-color: #fff !important
+}
+.stage3 {
+    margin-top: 100px;
+}
+.footerbar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%
+}
+
+.logoimg {
+    width: 80px;
+    margin-left: -30px;
+    margin-top: -20px
+}
+
+.topleftimg {
+    width: 150px;
+    position: absolute;
+    top: 15px;
+    left: 15px
+}
+
+.bottomrightimg {
+    width: 150px
+}
+
+.progress-text {
+    margin-left: 4px;
+    font-weight: 700
+}
+
+.bottomimg-div {
+    right: 0;
+    position: absolute;
+    bottom: 20px
+}
+
+#questionboxB {
+    margin-top: 5%
+}
+
+@media(max-width:1024px) {
+    .optheading {
+        font-size: 12px
+    }
+    .not {
+        margin-left: -17px
+    }
+    .notrue {
+        margin-left: -17px
+    }
+    .rarely {
+        margin-left: -9px
+    }
+    .rarelytrue {
+        margin-left: -12px
+    }
+    .often {
+        margin-left: -8px
+    }
+    .oftentrue {
+        margin-left: 0
+    }
+    .very {
+        margin-left: -13px
+    }
+    .verytrue {
+        margin-left: -1px
+    }
+    .question {
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 120px
+    }
+    .msgtext {
+        max-width: 500px
+    }
+    .samebox {
+        position: absolute;
+        left: 24%;
+        top: 17%
+    }
+    .stage12 {
+        margin-top: 10%
+    }
+    .topleftimg {
+        position: absolute;
+        top: 15px;
+        left: 15px
+    }
+    #questionbox {
+        margin-top: 25%
+    }
+    .questionb-row {
+        margin-left: 20%
+    }
+    #questionboxB {
+        margin-top: 15%
+    }
+    .svg-one {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-two {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-three {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-four {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-bone {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-btwo {
+        width: 140px !important;
+        height: 140px !important
+    }
+}
+
+@media(max-width:768px) {
+   
+    .samebox {
+        position: absolute;
+        left: 19%;
+        top: 25%
+    }
+    .msgtext {
+        max-width: 500px
+    }
+    .question {
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 120px
+    }
+    .question {
+        margin-left: 8%;
+        margin-right: 8%
+    }
+    .stage12 {
+        margin-top: 16%
+    }
+    .answer-row {
+        margin-top: 10%
+    }
+    .topleftimg {
+        position: absolute;
+        top: 15px;
+        left: 15px
+    }
+    .questionb-row {
+        margin-left: 10%
+    }
+    .radio-qb {
+        max-width: 11%
+    }
+    #questionboxB {
+        margin-top: 15%
+    }
+    .svg-one {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-two {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-three {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-four {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-bone {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-btwo {
+        width: 140px !important;
+        height: 140px !important
+    }
+}
+
+@media(min-width:1200px) {
+    .stage12 {
+        margin-top: 16%
+    }
+    .answer-row {
+        margin-top: 5%;
+        margin-left: 4%
+    }
+    .question {
+        font-family: montserrat, Helvetica, Arial, Lucida, sans-serif;
+        font-weight: 600;
+        letter-spacing: .01em;
+        text-align: center;
+        margin: auto;
+        height: 60px;
+        max-width: 800px
+    }
+    .radio-qb {
+        max-width: 7% !important
+    }
+    .questionb-row {
+        margin-left: 19%
+    }
+    .questionb {
+        max-width: 800px
+    }
+    .progress-text {
+        font-size: 16px
+    }
+    .svg-one {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-two {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-three {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-four {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-bone {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-btwo {
+        width: 140px !important;
+        height: 140px !important
+    }
+}
+
+@media only screen and (max-width:1199px) and (min-width:1025px) {
+    .questionb-row {
+        margin-left: 15%
+    }
+    .svg-one {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-two {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-three {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-four {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-bone {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-btwo {
+        width: 140px !important;
+        height: 140px !important
+    }
+}
+
+@media only screen and (max-width:980px) and (min-width:770px) {
+    .questionb-row {
+        margin-left: 10%
+    }
+    .radio-qb {
+        max-width: 15% !important
+    }
+}
+
+@media only screen and (max-width:750px) and (min-width:481px) {
+    .questionb-row {
+        margin-left: 3%
+    }
+    .radio-qb {
+        max-width: 15% !important
+    }
+    .leavediv {
+        margin-top: 40px
+    }
+}
+
+@media only screen and (max-width:600px) and (min-width:481px) {
+    .answer-row {
+        margin-left: 4%
+    }
+    .leavediv {
+        margin-top: 40px
+    }
+    .svg-one {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-two {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-three {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-four {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-bone {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-btwo {
+        width: 140px !important;
+        height: 140px !important
+    }
+}
+
+@media only screen and (max-width:767px) and (min-width:580px) {
+    .answer-row {
+        margin-left: 8%
+    }
+}
+
+@media only screen and (max-width:1600px) and (min-width:1400px) {
+    .svg-one {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-two {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-three {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-four {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-bone {
+        width: 140px !important;
+        height: 140px !important
+    }
+    .svg-btwo {
+        width: 140px !important;
+        height: 140px !important
+    }
+}
+
+@media(min-width:600px) {
+    .faux-radio:hover {
+        background-color: #c6bfb5 !important
+    }
+}
+
+@media(max-width:480px) {
+    .stage3{margin-top:50px;}
+    .question {
+        margin-left: 0%;
+        margin-right: 0%;
+        height: 200px
+    }
+    .bottomrightimg {
+        width: 75px
+    }
+    .samebox {
+        position: absolute;
+        left: 2%;
+        top: 14%
+    }
+    .msgheading {
+        font-size: 23px !important
+    }
+    .topleftimg {
+        width: 150px;
+        position: absolute;
+        top: 15px;
+        left: 15px
+    }
+    .stage12 {
+        margin-top: 10%
+    }
+    .not {
+        margin-left: -18px
+    }
+    .notrue {
+        margin-left: -16px
+    }
+    .rarely {
+        margin-left: -11px
+    }
+    .rarelytrue {
+        margin-left: -12px
+    }
+    .often {
+        margin-left: -11px
+    }
+    .oftentrue {
+        margin-left: -2px
+    }
+    .very {
+        margin-left: -17px
+    }
+    .verytrue {
+        margin-left: -4px
+    }
+    .leavediv {
+        margin-top: 40px
+    }
+    .questiondiv {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0
+    }
+    .optheading {
+        font-size: 13px;
+        font-family: sans-serif;
+        font-weight: 700;
+        color: #c6bfb5
+    }
+    .secondrow {
+        margin-top: 15%
+    }
+    .samebox h2 {
+        font-weight: 700;
+        font-size: 30px
+    }
+    .btnclose {
+        font-size: 25px;
+        color: #25221c66;
+        cursor: pointer
+    }
+    .animation-svg {
+        position: absolute !important;
+        top: -18px !important;
+        left: -8px !important
+    }
+    .lrg {
+        height: 46px;
+        width: 46px;
+        margin-top: 5px
+    }
+    .svg-one {
+        width: 138px !important;
+        height: 138px !important
+    }
+    .svg-two {
+        width: 138px !important;
+        height: 138px !important
+    }
+    .svg-three {
+        width: 138px !important;
+        height: 138px !important
+    }
+    .svg-four {
+        width: 138px !important;
+        height: 138px !important
+    }
+    .svg-bone {
+        width: 138px !important;
+        height: 138px !important
+    }
+    .svg-btwo {
+        width: 138px !important;
+        height: 138px !important
+    }
+    .progress-bar {
+        background-color: #000 !important
+    }
+    .answer-row {
+        margin-top: 0%;
+        overflow: hidden;
+        margin-left: 1px
+    }
+    .questionb-row {
+        margin-left: 0%
+    }
+    .radio-qb {
+        max-width: 16% !important
+    }
+    .questionb-row {
+        margin-left: -3%
+    }
+    .questionb {
+        font-size: 20px
+    }
+    #questionboxB {
+        margin-top: 20%
+    }
+    .loaderdiv {
+        left: 25%;
+    }
+}
+
+@media(max-width:320px) {
+    .optheading {
+        font-size: 12px
+    }
+    .svg-one {
+        width: 138px !important;
+        height: 138px !important
+    }
+    .svg-two {
+        width: 138px !important;
+        height: 138px !important
+    }
+    .svg-three {
+        width: 138px !important;
+        height: 138px !important
+    }
+    .svg-four {
+        width: 138px !important;
+        height: 138px !important
+    }
+    .svg-bone {
+        width: 138px !important;
+        height: 138px !important
+    }
+    .svg-btwo {
+        width: 138px !important;
+        height: 138px !important
+    }
+    .topleftimg {
+        width: 135px;
+        position: absolute;
+        top: 15px;
+        left: 15px
+    }
+    .logoimg {
+        width: 70px
+    }
+    .question {
+        height: 200px
+    }
+    .answer-row {
+        margin-top: 0%;
+        overflow: hidden;
+        margin-left: -7px
+    }
+    .questionb {
+        font-size: 18px
+    }
+    #questionboxB {
+        margin-top: 2%
+    }
+}
