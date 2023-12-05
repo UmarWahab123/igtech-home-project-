@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?2148d868817c79bf1554bd07633961c9") format("truetype"),
+url("./flaticon.woff?2148d868817c79bf1554bd07633961c9") format("woff"),
+url("./flaticon.woff2?2148d868817c79bf1554bd07633961c9") format("woff2"),
+url("./flaticon.eot?2148d868817c79bf1554bd07633961c9#iefix") format("embedded-opentype"),
+url("./flaticon.svg?2148d868817c79bf1554bd07633961c9#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-conversation:before {
+    content: "\f101";
+}
+.flaticon-salary:before {
+    content: "\f102";
+}
+.flaticon-businessman:before {
+    content: "\f103";
+}
+.flaticon-house:before {
+    content: "\f104";
+}
+.flaticon-folder:before {
+    content: "\f105";
+}
+.flaticon-employee:before {
+    content: "\f106";
+}
+.flaticon-expenses:before {
+    content: "\f107";
+}
+.flaticon-portfolio:before {
+    content: "\f108";
+}
+.flaticon-portfolio-1:before {
+    content: "\f109";
+}
+.flaticon-promotion:before {
+    content: "\f10a";
+}
+.flaticon-communicate:before {
+    content: "\f10b";
+}
+.flaticon-settings:before {
+    content: "\f10c";
+}
+.test{
+    background-color: #151515;
+}
+ .test2{
+    color: white !important;
+}
+.test3{
+    background-color: #151515 !important;
+}

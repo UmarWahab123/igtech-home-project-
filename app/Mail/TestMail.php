@@ -16,7 +16,7 @@ class TestMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
          $this->data = $data;
     }
@@ -28,6 +28,6 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        return $this->from('masadkhan1717@gmail.com')->subject('New Customer Equiry')->view('pay.customeremail')->with('data', $this->data);
+        return $this->subject('New Customer Equiry')->view('emails.mail')->with('data', $this->data);
     }
 }

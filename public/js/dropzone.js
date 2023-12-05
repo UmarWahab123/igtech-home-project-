@@ -9,31 +9,77 @@ function removeImg(arr) {
     }
     return arr;
 }
-var DropzoneDemoLot= {
+var projectdoc= {
         init:function() {
             var fileList = new Array;
             var fileListinput = new Array;
             var i =0;
-            Dropzone.options.mDropzoneLot= {
+            Dropzone.options.projectdoc= {
                 paramName:"file",
-                maxFiles:20,
+                maxFiles:1,
                 maxFilesize:20,
                 addRemoveLinks:!0,
-                // renameFilename: function (filename) {
-                //     return new Date().getTime() + '_' + filename;
-                // },
                 accept:function(e, o) {
                     "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
                 },
                 success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = serverFileName;
-                    // console.log(fileListinput);
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput = "public/uploads/projectdoc/"+serverFileName;
+                    $('input[name="file"]').val(fileListinput);
                     i++;
-                    $('input[name="images"]').val(JSON.stringify(fileListinput));
                 },
                 removedfile:function(file) {
-                    var path="/public/uploads/lots/lot images/";
+                    var path="/public/uploads/projectdoc/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('input[name="file"]').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+
+var members= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.certificate= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/membersprofile/"+serverFileName;
+                    $('input[name="profile"]').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/membersprofile/";
                     var rmvFile = "";
                     for(f=0;f<fileList.length;f++){
                         if(fileList[f].fileName == file.name)
@@ -49,7 +95,7 @@ var DropzoneDemoLot= {
                             data: { "fileList" : rmvFile,"path":path },
                             success: function(data) {
                                 removeImg(fileListinput, rmvFile);
-                                $('input[name="images"]').val(JSON.stringify(fileListinput));
+                                $('input[name="profile"]').val(JSON.stringify(fileListinput));
                                 $(document).find(file.previewElement).remove();
                                 i--;
                             }
@@ -60,6 +106,603 @@ var DropzoneDemoLot= {
         }
     }
     ;
+
+var siafront= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.siafront= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/siafront/"+serverFileName;
+                    $('input[name="sia_front"]').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/siafront/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            //url: document.location.origin+"/64_HorseAuction/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('input[name="sia_front"]').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+
+var siaback= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.siaback= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/siaback/"+serverFileName;
+                    $('input[name="sia_back"]').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/siaback/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            //url: document.location.origin+"/64_HorseAuction/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('input[name="sia_back"]').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+var proofaddress1= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.proofaddress1= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/proofaddress1/"+serverFileName;
+                    $('input[name="proof_address1"]').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/proofaddress1/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            //url: document.location.origin+"/64_HorseAuction/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('input[name="proof_address1"]').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+
+var proofaddress2= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.proofaddress2= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/proofaddress2/"+serverFileName;
+                    $('input[name="proof_address2"]').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/proofaddress2/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            //url: document.location.origin+"/64_HorseAuction/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('input[name="proof_address2"]').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+
+var passportfront= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.passportfront= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/passportfront/"+serverFileName;
+                    $('input[name="passport_front"]').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/passportfront/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            //url: document.location.origin+"/64_HorseAuction/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('input[name="passport_front"]').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+
+var passportback= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.passportback= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/passportback/"+serverFileName;
+                    $('input[name="passport_back"]').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/passportback/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            //url: document.location.origin+"/64_HorseAuction/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('input[name="passport_back"]').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+
+var otherdocument= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.otherdocument= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/otherdocument/"+serverFileName;
+                    $('input[name="other_document"]').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/otherdocument/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            //url: document.location.origin+"/64_HorseAuction/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('input[name="other_document"]').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+
+var passportsizepicture= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.passportsizepicture= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/passportsizepicture/"+serverFileName;
+                    $('input[name="passport_sizepicture"]').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/passportsizepicture/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            //url: document.location.origin+"/64_HorseAuction/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('input[name="passport_sizepicture"]').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+
+var criminal4= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.criminal4= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/criminal/"+serverFileName;
+                    $('.criminal4').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/criminal/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            //url: document.location.origin+"/64_HorseAuction/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('.criminal4').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+var criminal1= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.criminal1= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/criminal/"+serverFileName;
+                    $('.criminal1').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/criminal/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            //url: document.location.origin+"/64_HorseAuction/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('.criminal1').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+var criminal2= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.criminal2= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/criminal/"+serverFileName;
+                    $('.criminal2').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/criminal/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            //url: document.location.origin+"/64_HorseAuction/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('.criminal2').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+var criminal3= {
+        init:function() {
+            var fileList = new Array;
+            var fileListinput = new Array;
+            var i =0;
+            Dropzone.options.criminal3= {
+                paramName:"file",
+                maxFiles:1,
+                maxFilesize:20,
+                addRemoveLinks:!0,
+                accept:function(e, o) {
+                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
+                },
+                success:function(file, serverFileName) {
+                    // alert('asdf');
+                    // $('input[name="image"]').val(JSON.stringify(fileListinput));
+                 fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
+                    fileListinput[i] = "public/uploads/criminal/"+serverFileName;
+                    $('.criminal3').val(fileListinput[i]);
+                    i++;
+                },
+                removedfile:function(file) {
+                    var path="/public/uploads/criminal/";
+                    var rmvFile = "";
+                    for(f=0;f<fileList.length;f++){
+                        if(fileList[f].fileName == file.name)
+                        {
+                            rmvFile = fileList[f].serverFileName;
+                        }
+                    }
+                    if (rmvFile){
+                        $.ajax({
+                            url: document.location.origin+"/delete_temp_files.php",
+                            //url: document.location.origin+"/64_HorseAuction/delete_temp_files.php",
+                            type: "POST",
+                            data: { "fileList" : rmvFile,"path":path },
+                            success: function(data) {
+                                removeImg(fileListinput, rmvFile);
+                                $('.criminal3').val(JSON.stringify(fileListinput));
+                                $(document).find(file.previewElement).remove();
+                                i--;
+                            }
+                        });
+                    }
+                },
+            }
+        }
+    }
+    ;
+
 function JS_ClearDropZone() {
     //DropZone Object Get
     
@@ -121,751 +764,25 @@ var media= {
         }
     }
     ;
-        var address= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.address= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/property/landlord/address/'+serverFileName;
-                    i++;
-                    $('.address_id').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/property/landlord/address/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                                url: document.location.origin+"/delete_temp_files.php",
-                             //url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                $('.address_id').val(fileListinput);
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
 
 
-    var agency= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.agency= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/property/landlord/agency/'+serverFileName;
-                    i++;
-                    $('.agency_tcs').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/property/landlord/agency/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                                url: document.location.origin+"/delete_temp_files.php",
-                            // url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                // $('input[name="vetanaryDocs"]').val(JSON.stringify(fileListinput));
-                                $('.agency_tcs').val(fileListinput);
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
-        var bank= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.bank= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/property/landlord/bank/'+serverFileName;
-                    i++;
-                    $('.bank_stat').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/property/landlord/bank/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                            url: document.location.origin+"/delete_temp_files.php",
-                            // url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                $('.bank_stat').val(fileListinput);
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
-        var photo= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.photo= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/property/landlord/photo/'+serverFileName;
-                    i++;
-                    $('.photo_id').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/property/landlord/photo/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                                url: document.location.origin+"/delete_temp_files.php",
-                             //url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                // $('input[name="vetanaryDocs"]').val(JSON.stringify(fileListinput));
-                                $('.photo_id').val(fileListinput);
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
-
-    var userdoc= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.userdoc= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/user/doc/'+serverFileName;
-                    i++;
-                    $('input[name="doc"]').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/user/doc/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                            url: document.location.origin+"/delete_temp_files.php",
-                            // url: document.location.origin+"/wiz/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                $('input[name="doc"]').val(fileListinput);
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
-
-        var deposit= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.deposit= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/customer/buyer/deposit/'+serverFileName;
-                    i++;
-                    $('input[name="deposit_proof"]').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/customer/buyer/deposit/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                              url: document.location.origin+"/delete_temp_files.php",
-                             //url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                // $('input[name="vetanaryDocs"]').val(JSON.stringify(fileListinput));
-                                $('input[name="deposit_proof"]').val(fileListinput);
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
-        var aip= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.aip= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/customer/buyer/aip/'+serverFileName;
-                    i++;
-                    $('input[name="aip"]').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/customer/buyer/aip/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                                url: document.location.origin+"/delete_temp_files.php",
-                            // url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                // $('input[name="vetanaryDocs"]').val(JSON.stringify(fileListinput));
-                                $('input[name="aip"]').val(fileListinput);
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
-     var meeting= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.meeting= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/client/meeting/'+serverFileName;
-                    i++;
-                    $('input[name="meeting_document"]').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/client/meeting/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                                url: document.location.origin+"/delete_temp_files.php",
-                            // url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                $('input[name="meeting_document"]').val(fileListinput);
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
-     var operational= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.operational= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/client/operational/'+serverFileName;
-                    i++;
-                    $('input[name="operational_document"]').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/client/operational/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                                url: document.location.origin+"/delete_temp_files.php",
-                            // url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                $('input[name="operational_document"]').val(fileListinput);
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;  
-     var contracts= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.contracts= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/client/contracts/'+serverFileName;
-                    i++;
-                    $(this).parents('.contract-row').find('.contract_document').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/client/contracts/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                            url: document.location.origin+"/delete_temp_files.php",
-                            // url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                $('.contract_document').val(fileListinput);
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
-
-var mDropzonedp= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.mDropzonedp= {
-                paramName:"file",
-                maxFiles:1,
-                maxFilesize:10,
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/employee/profile/'+serverFileName;
-                    console.log(fileListinput);
-                    i++;
-                    $('input[name="dp"]').val(fileListinput);
-                },
-                removedfile:function(file) {
-                    var path="public/uploads/employee/profile/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                                url: document.location.origin+"/delete_temp_files.php",
-                            //url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                $('input[name="dp"]').val(fileListinput);
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    };
 
 
-var assetpics= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.assetpics= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".jpg,.png,.jpeg",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/asset/pics/'+serverFileName;
-                    i++;
-                    $('input[name="pics"]').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/asset/pics/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                            // url: document.location.origin+"/delete_temp_files.php",
-                            url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                $('input[name="pics"]').val(JSON.stringify(fileListinput));
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
-var assetdocuments= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.assetdocuments= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/asset/documents/'+serverFileName;
-                    i++;
-                    $('input[name="documents"]').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/asset/documents/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                            url: document.location.origin+"/delete_temp_files.php",
-                            // url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                $('input[name="documents"]').val(JSON.stringify(fileListinput));
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
-var resume= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.resume= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/employee/resume/'+serverFileName;
-                    i++;
-                    $('input[name="resume"]').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/employee/resume/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                            url: document.location.origin+"/delete_temp_files.php",
-                            // url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                $('input[name="resume"]').val(JSON.stringify(fileListinput));
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
-var coverletter= {
-        init:function() {
-            var fileList = new Array;
-            var fileListinput = new Array;
-            var i =0;
-            Dropzone.options.coverletter= {
-                paramName:"file",
-                maxFiles:20,
-                maxFilesize:20,
-                acceptedFiles:".docx,.pdf",
-                addRemoveLinks:!0,
-                accept:function(e, o) {
-                    "justinbieber.jpg"==e.name?o("Naha, you don't."): o()
-                },
-                success:function(file, serverFileName) {
-                    fileList[i] = {"serverFileName" : serverFileName, "fileName" : file.name,"fileId" : i };
-                    fileListinput[i] = 'public/uploads/employee/coverletter/'+serverFileName;
-                    i++;
-                    $('input[name="cover_letter"]').val(JSON.stringify(fileListinput));
-                },
-                removedfile:function(file) {
-                    var path="/public/uploads/employee/converletter/";
-                    var rmvFile = "";
-                    for(f=0;f<fileList.length;f++){
-                        if(fileList[f].fileName == file.name)
-                        {
-                            rmvFile = fileList[f].serverFileName;
-                        }
-                    }
-                    if (rmvFile){
-                        $.ajax({
-                            url: document.location.origin+"/delete_temp_files.php",
-                            // url: document.location.origin+"/ozland/delete_temp_files.php",
-                            type: "POST",
-                            data: { "fileList" : rmvFile,"path":path },
-                            success: function(data) {
-                                removeImg(fileListinput, rmvFile);
-                                $('input[name="cover_letter"]').val(JSON.stringify(fileListinput));
-                                $(document).find(file.previewElement).remove();
-                                i--;
-                            }
-                        });
-                    }
-                },
-            }
-        }
-    }
-    ;
 
-DropzoneDemoLot.init();
-mDropzonedp.init();
+
+
+projectdoc.init();
+members.init();
+siafront.init();
+siaback.init();
+proofaddress1.init();
+proofaddress2.init();
+passportfront.init();
+passportback.init();
+otherdocument.init();
+passportsizepicture.init();
+criminal4.init();
+criminal1.init();
+criminal2.init();
+criminal3.init();
 media.init();
-address.init();
-photo.init();
-bank.init();
-agency.init();
-userdoc.init();
-deposit.init();
-aip.init();
-meeting.init();
-operational.init();
-contracts.init();
-assetpics.init();
-assetdocuments.init();
-resume.init();
-coverletter.init();

@@ -1,0 +1,73 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?2148d868817c79bf1554bd07633961c9") format("truetype"),
+url("./flaticon.woff?2148d868817c79bf1554bd07633961c9") format("woff"),
+url("./flaticon.woff2?2148d868817c79bf1554bd07633961c9") format("woff2"),
+url("./flaticon.eot?2148d868817c79bf1554bd07633961c9#iefix") format("embedded-opentype"),
+url("./flaticon.svg?2148d868817c79bf1554bd07633961c9#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "conversation": "\f101",
+    "salary": "\f102",
+    "businessman": "\f103",
+    "house": "\f104",
+    "folder": "\f105",
+    "employee": "\f106",
+    "expenses": "\f107",
+    "portfolio": "\f108",
+    "portfolio-1": "\f109",
+    "promotion": "\f10a",
+    "communicate": "\f10b",
+    "settings": "\f10c",
+);
+
+.flaticon-conversation:before {
+    content: map-get($flaticon-map, "conversation");
+}
+.flaticon-salary:before {
+    content: map-get($flaticon-map, "salary");
+}
+.flaticon-businessman:before {
+    content: map-get($flaticon-map, "businessman");
+}
+.flaticon-house:before {
+    content: map-get($flaticon-map, "house");
+}
+.flaticon-folder:before {
+    content: map-get($flaticon-map, "folder");
+}
+.flaticon-employee:before {
+    content: map-get($flaticon-map, "employee");
+}
+.flaticon-expenses:before {
+    content: map-get($flaticon-map, "expenses");
+}
+.flaticon-portfolio:before {
+    content: map-get($flaticon-map, "portfolio");
+}
+.flaticon-portfolio-1:before {
+    content: map-get($flaticon-map, "portfolio-1");
+}
+.flaticon-promotion:before {
+    content: map-get($flaticon-map, "promotion");
+}
+.flaticon-communicate:before {
+    content: map-get($flaticon-map, "communicate");
+}
+.flaticon-settings:before {
+    content: map-get($flaticon-map, "settings");
+}

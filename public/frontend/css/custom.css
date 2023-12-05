@@ -1,0 +1,24 @@
+.isotope-filters-horizontal a {
+    font-weight: bold;
+    font-size: 15px;
+}
+.rd-navbar-nav a{
+        font-weight: bold !important;
+    font-size: 15px !important;
+}
+.rd-navbar-nav a:hover{
+      color: green !important;
+}
+.alert-success{
+    background-color: lightgreen !important;
+}
+.sdhgsdh{
+    margin: 0;
+    margin-bottom: 12px;
+    font-family: monospace;
+    font-size: x-large;
+    font-weight: lighter;
+    font-style: italic;
+    color: black;
+
+}

@@ -18,6 +18,7 @@
           });
         </script>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!--end::Web font -->
@@ -37,11 +38,11 @@
             </div>
             <!-- BEGIN: Header -->
 
-            <header id="m_header" class="m-grid__item    m-header " m-minimize-offset="200" m-minimize-mobile-offset="200">
+            <header id="m_header" class="m-grid__item    m-header" m-minimize-offset="200" m-minimize-mobile-offset="200">
                 <div class="m-container m-container--fluid m-container--full-height">
                     <div class="m-stack m-stack--ver m-stack--desktop">
                         <!-- BEGIN: Brand -->
-                        <div class="m-stack__item m-brand  m-brand--skin-dark ">
+                        <div class="m-stack__item m-brand  m-brand--skin-dark" style="background-color:#151515 ;">
                             <div class="m-stack m-stack--ver m-stack--general">
                                 <div class="m-stack__item m-stack__item--middle m-brand__logo">
                                     <a href="index.html" class="m-brand__logo-wrapper">
